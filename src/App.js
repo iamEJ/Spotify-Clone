@@ -28,6 +28,12 @@ function App() {
           user: user,
         });
       });
+      spoti.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists: playlists,
+        });
+      });
     }
   }, []);
 
